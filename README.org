@@ -7,6 +7,10 @@ To simply run the tutorial you'll need to [[https://docs.docker.com/engine/insta
 platform first, then run the command
 #+BEGIN_SRC sh
 >> docker run -it kauffman77/shellslayer
+# Intel-based computers (e.g. most Windows / Linu machines)
+
+>> docker run -it --platform=linux/amd64 kauffman77/shellslayer
+# ARM-based computers such as Apple M1 or M2 Macbooks
 #+END_SRC
 which will download container (shell environment) and start the
 exorcism... er exercise.
