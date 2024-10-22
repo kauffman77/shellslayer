@@ -1,0 +1,7 @@
+* Shell Slayer
+A shell tutorial with a daemonic twist that uses Docker containers for
+a stable environment.
+
+* Running the Tutorial
+
+* Building / Modifying the Tutorial

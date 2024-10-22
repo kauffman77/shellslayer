@@ -1,0 +1,69 @@
+* Synopsis
+This doc contains some design notes for shell slayer along with some
+notes on the current status / progress.
+
+* Principles
+- Levels are largely independent and can be done in any order; in some
+  cases information gained from a previous level solution is needed to
+  help in a later level but this should be limited to enable those
+  working on the tutorial to target their attention at new information
+- Level setup requires a demon name but may need more characters than
+  in the demon name; this could be bypassed by using several names to
+  meet the minimum character target
+- Levels will need a random seed
+- Could do level setup in Python or Shell
+- Python seems long-term better as it allows for easier text
+  processing, random numbers, data structures, etc
+- Setup will happen in a single python script setup.py
+- Levels will have their own directory of setup files
+- A level setup function will take as an argument the demon name
+  array, potentially shrink it
+- level setup will return a string which should be appended to the
+  root password
+- level setup will also copy files around
+- make sure to change the files to be rwx by the user group
+- might use the prompt as a place to execute new code each time a
+  command is run; prevents entering certain directories, experts can
+  disable via changing their init script
+
+
+* Levels
+** DONE cat, more/less to view files
+On login, print out "to see initial instructions, type `cat
+README.md`; a long file that will end with "Thank you for your help;
+most of my instructions are at the beginning of this file which may
+have scrolled by. You can see them in full by typing `less
+INSTRUCTIONS.txt` to start from the beginning and page the results."
+- Teaches cat and less in the fashion that they ought to be used
+
+** DONE Shell loops to rename files
+** DONE grep to search single large files / collections of files
+Has limited recursive search which could be expanded
+** TODO find to traverse directories and locate a file
+** TODO find to remove all files of a specific name
+Need a monitor process that watches for this and reveals a name when
+the files are removed
+** TODO "vimpire" level: edit a text file
+Make changes so that certain fields are present which will reveal a
+name; best done with vi or nano
+** TODO diff of files to show the differences
+- single letter of the daemons name is in spread across the two files;
+  the diff will show single letters in file that show the differing
+  letters
+- 2 brothers directories which requires use of diff to determine
+  differing files
+** TODO Directory diff
+shows a number of files that are not in a baseline directory but are
+in the other; perhaps just name the file after the daemon name
+** TODO sed to do light modifications of streams
+** TODO awk for heavier modifications, parsing of columnar data
+** TODO Background procs running continuously / periodically via cron
+Use ~ps -A~ to find the procs, examination of process tree to kill
+whole lineage
+** TODO Pipelines to show the power of combined commands
+** TODO Shell scripting to automate the whole level
+- speed run to get the "true ending"
+- Requires mounting the local directory to allow Docker container to
+  access the script, start it when run
+
+** Misc Ideas

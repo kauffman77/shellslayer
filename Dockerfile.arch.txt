@@ -1,0 +1,20 @@
+FROM --platform=linux/amd64 archlinux:latest
+
+ARG TARGETARCH
+
+RUN yes | pacman -Sy \
+    which less \
+    nano vim \
+    python3 gawk wget curl \
+    screen tmux 
+
+# # Need extra packages if running on an ARM system
+# RUN if [ "$TARGETARCH" = "arm64" ]; then apt install -y gdb-multiarch qemu-user gcc-x86-64-linux-gnu;  fi
+
+COPY setup-files /setup-files
+COPY main.sh /main.sh
+COPY daemon /daemon
+RUN chmod u+x main.sh daemon
+
+CMD ./main.sh
+
