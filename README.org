@@ -3,5 +3,30 @@ A shell tutorial with a daemonic twist that uses Docker containers for
 a stable environment.
 
 * Running the Tutorial
+To simply run the tutorial you'll need to [[https://docs.docker.com/engine/install/][install Docker]] on your
+platform first, then run the command
+#+BEGIN_SRC sh
+>> docker run -it kauffman77/shellslayer
+#+END_SRC
+which will download container (shell environment) and start the
+exorcism... er exercise.
 
 * Building / Modifying the Tutorial
+The provided ~Makefile~ is barebones but allows slightly quicker
+builds / runs during development. Type ~make help~ to get the basics.
+
+#+BEGIN_SRC sh
+>> make help
+Typical usage is:
+   >> make build  # use `docker build` to update the local container
+   >> make run    # run the local version of the container
+   >> make push   # push the current local copy to DockerHub
+
+Pushes will go to:
+   kauffman77/shellslayer:latest
+Make sure that's your username / repo on DockerHub if you plan to push
+#+END_SRC
+
+Some of the sources are in the top-level directory while many of the
+setup files including the main ~setup.py~ file are in ~setup-files~
+subdirectory.
