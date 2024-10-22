@@ -9,6 +9,17 @@ import time
 def put_cursor(row,col):
   print(f"\033[{row};{col}H",end="")
 
+def printstr_pos(string,startrow):
+  '''Uses terminal cursor positioning to print a message.
+
+  Without position, programs like vi / nano / less screw up the
+  printing of newline-based messages; this funciton prevents that
+
+  '''
+  for (i,line) in enumerate(string.splitlines()):
+    put_cursor(startrow+i,0)
+    print(line,end="",flush=True)
+
 def freakout():
   for i in range(30):
     row = random.randrange(40)
@@ -16,23 +27,22 @@ def freakout():
     put_cursor(row,col)
     time.sleep(0.2 - i/30*0.19)
     print("Nuwonmai!",end="",flush=True)
-  put_cursor(30,0)
   # ascii art by Deelkar: https://www.asciiart.eu/mythology/devils
-  daemon='''
-.-._                                                   _,-,
-  `._`-._                                           _,-'_,'
-     `._ `-._                                   _,-' _,'
-        `._  `-._        __.-----.__        _,-'  _,'
-           `._   `#==="""           """===#'   _,'
-              `._/)  ._               _.  (\\_,'
-               )*'     **.__     __.**     '*( 
-               #  .==..__  ""   ""  __..==,  # 
-               #   `"._(_).       .(_)_."'   #
+  message='''\
+.-._                                                   _,-,          
+  `._`-._                                           _,-'_,'          
+     `._ `-._                                   _,-' _,'             
+        `._  `-._        __.-----.__        _,-'  _,'                
+           `._   `#==="""           """===#'   _,'                   
+              `._/)  ._               _.  (\\_,'                     
+               )*'     **.__     __.**     '*(                       
+               #  .==..__  ""   ""  __..==,  #                       
+               #   `"._(|).       .(|)_."'   #                       
+=====================================================================
+= PRESS Ctl-L to refresh the screen and remove daemonic defacements =
+=====================================================================
 '''
-  print(daemon,end="",flush=True)
-  print("=====================================================================")
-  print("= PRESS Ctl-L to refresh the screen and remove daemonic defacements =")
-  print("=====================================================================")
+  printstr_pos(message,30)
 
 def main():
   time.sleep(15)
