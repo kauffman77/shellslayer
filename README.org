@@ -12,8 +12,9 @@ which will download container (shell environment) and start the
 exorcism... er exercise.
 
 * Building / Modifying the Tutorial
-The provided ~Makefile~ is barebones but allows slightly quicker
-builds / runs during development. Type ~make help~ to get the basics.
+The provided ~Makefile~ is barebones and oriented towards Linux but
+allows slightly quicker builds / runs during development. Type ~make
+help~ to get the basics.
 
 #+BEGIN_SRC sh
 >> make help
@@ -30,3 +31,8 @@ Make sure that's your username / repo on DockerHub if you plan to push
 Some of the sources are in the top-level directory while many of the
 setup files including the main ~setup.py~ file are in ~setup-files~
 subdirectory.
+
+A typical development cycle might add a new level as a subdirectory to
+~setup-files/~, modify the ~setup.py~ program to create the phase
+during tutorial startup, the do a ~make build~ followed by ~make run~
+to test it.

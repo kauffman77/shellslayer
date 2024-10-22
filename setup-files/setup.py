@@ -3,6 +3,8 @@ import sys
 import os
 import random
 import subprocess
+import re
+import shlex
 
 USER_HOME = "/home/paladin"
 
@@ -32,13 +34,20 @@ def main(cmd_args):
   res = setup_level_00_less(names)
   rootpass.append(res)
 
+  res = setup_level_02_editing(names)
+  rootpass.append(res)
+
   res = setup_level_05_grep(names)
   rootpass.append(res)
 
   res = setup_level_10_sh_loops(names)
   rootpass.append(res)
 
+  res = setup_level_15_find(names)
+  rootpass.append(res)
+
   rootpass_str = ''.join(rootpass)
+
   with open("rootpass.txt","w") as fout:
     print(rootpass_str,file=fout)
   
@@ -50,6 +59,23 @@ def setup_level_00_less(names):
   readmefile = 'level_00_less/README.md'
   name = names.pop()            # pick last name and remove it
   shell(f"sed 's/DEMONNAME/{name}/' {readmefile} > {USER_HOME}/README.md")
+  return name
+
+
+def setup_level_02_editing(names):
+  name = names.pop()            # pick last name and remove it
+  lvl="level_02_editing"
+  level_dir = f"{USER_HOME}/{lvl}"
+  readme=f"{lvl}/README.md"
+  monitor=f"{lvl}/monitor_editing.sh"
+  shell(f"mkdir {level_dir}")
+  beg_phrase=r'''oh benevolent spirit... plz aid my quest and reveal demon"s name??'''
+  end_phrase=r'''Oh benevolent spirit, PLEASE aid my quest and reveal demon's name!!'''
+  times=5
+  shell(f"sed 's/PHRASE/{beg_phrase}/g' {readme} > {level_dir}/README.md")
+  shell(f'''sed -i.bk "s/PHRASE/{end_phrase}/g; s/TIMES/{times}/g; s/DEMONNAME/{name}/g" {monitor}''')
+  shell(f"chmod u+x {monitor}")
+  shell(f"{monitor} {level_dir} &")
   return name
 
 
@@ -108,7 +134,7 @@ def setup_level_10_sh_loops(names):
   name = names.pop()            # pick last name and remove it
   lvl="level_10_sh_loops"
   level_dir = f"{USER_HOME}/{lvl}"
-  monitor=f"{lvl}/sh_loop_monitor.sh"
+  monitor=f"{lvl}/monitor_sh_loop.sh"
   readme=f"{lvl}/README.md"
   limit = 2000
   shell(f"sed -i.bk 's/DEMONNAME/{name}/g; s/LIMIT/{limit}/g;' {monitor}")
@@ -119,6 +145,37 @@ def setup_level_10_sh_loops(names):
   shell(f"cd {level_dir} && for f in nums_*; do mv $f $f.dat; done")
   shell(f"{monitor} {level_dir} &")
   return name
+
+# random assortment of DnD names that look vaguely like daemon names
+character_names = [
+  "Drizzt", "DoUrden", "Aballister", "Bonaduce", "Jarlaxle", "Gromph", 
+  "Baenre", "Yvonnel", "Vierna", "Briza", "Malice", "Dinin", "Uthegental",
+  "Artemis", "Entreri", "Roddy", "McGristle", "Montolio", "Debrouchee",
+  "Belwar", "Dissengulp", "Bruenor", "Guenhwyvar", "Cattibrie", "Kellindil",
+]
+
+
+def setup_level_15_find(names):
+  name = names.pop()            # pick last name and remove it
+  lvl="level_15_find"
+  level_dir = f"{USER_HOME}/{lvl}"
+  readme=f"{lvl}/README.md"
+  shell(f"mkdir {level_dir}")
+  shell(f"cp {readme} {level_dir}")
+  dirnames = []
+  dirnames.extend(character_names)                # add character names
+  dirnames.extend(names[0:(min(len(names),10))])  # add incorrect daemon names
+  dirnames.append(name)                           # add correct daemon name
+  random.shuffle(dirnames)                        # shuffle to prevent detection via most-recently-modified
+  for d in dirnames:
+    dname = re.sub("(.)",r"\1/",d)                # directory is based on each letter in name: D/r/i/z/z/t/
+    shell(f"mkdir -p {level_dir}/{dname}")
+    if d==name:
+      shell(f"echo '{name} was here: Mwa ha ha ha ha!' > {level_dir}/{dname}/altar.txt")
+    else:
+      shell(f"touch {level_dir}/{dname}/dead_end")
+  return name
+      
 
 def setup_level_99_su_kill(names):
   lvl="level_99_su_kill"

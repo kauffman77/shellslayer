@@ -24,5 +24,5 @@ echo DEMONNAME > $PWD/altar.txt
 
 echo ""
 echo "MONITOR: At last the files have sane extensions...."
-echo "MONITOR: The demon's name is on the alter : $PWD/altar.txt"
+echo "MONITOR: The demon's name is on the altar : $PWD/altar.txt"
     
