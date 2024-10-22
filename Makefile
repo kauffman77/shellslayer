@@ -1,6 +1,7 @@
 USER = kauffman77
-REPO = shell-slayer
-TAG = v0.1
+REPO = shellslayer
+TAG = latest
+# TAG = v0.1
 
 build :
 	docker build -t $(USER)/$(REPO):$(TAG) .
