@@ -12,7 +12,7 @@ platform first, then run the command
 >> docker run -it --platform=linux/amd64 kauffman77/shellslayer
 # ARM-based computers such as Apple M1 or M2 Macbooks
 #+END_SRC
-which will download container (shell environment) and start the
+which will download a container (shell environment) and start the
 exorcism... er exercise.
 
 * Building / Modifying the Tutorial
