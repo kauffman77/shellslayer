@@ -3,17 +3,30 @@ A shell tutorial with a daemonic twist that uses Docker containers for
 a stable environment.
 
 * Running the Tutorial
-To simply run the tutorial you'll need to [[https://docs.docker.com/engine/install/][install Docker]] on your
-platform first, then run the command
+To simply run the tutorial you'll need to
+1. [[https://docs.docker.com/engine/install/][Install Docker]] on your platform
+2. Start Docker, often by running the "Docker Desktop" program,
+3. Open a command terminal
+   - Windows: ~cmd.exe~
+   - MacOS: ~Terminal~ application
+   - Linux: Your terminal emulator of choice
+4. Run following command in your command line terminal
 #+BEGIN_SRC sh
->> docker run -it kauffman77/shellslayer
-# Intel-based computers (e.g. most Windows / Linu machines)
+>> docker run -it --rm kauffman77/shellslayer
+# Intel-based computers (e.g. most Windows / Linux machines)
 
->> docker run -it --platform=linux/amd64 kauffman77/shellslayer
+>> docker run -it --rm --platform=linux/amd64 kauffman77/shellslayer
 # ARM-based computers such as Apple M1 or M2 Macbooks
 #+END_SRC
 which will download a container (shell environment) and start the
 exorcism... er exercise.
+
+If you suspect that your version of the Shellslayer container is out
+of date, run the following command to update to the latest image.
+#+BEGIN_SRC sh
+>> docker image pull kauffman77/shellslayer
+#+END_SRC
+
 
 * Building / Modifying the Tutorial
 The provided ~Makefile~ is barebones and oriented towards Linux but

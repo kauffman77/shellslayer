@@ -21,11 +21,11 @@ def printstr_pos(string,startrow):
     print(line,end="",flush=True)
 
 def freakout():
-  for i in range(30):
+  for i in range(40):
     row = random.randrange(40)
     col = random.randrange(60)
     put_cursor(row,col)
-    time.sleep(0.2 - i/30*0.19)
+    time.sleep(0.2 - i/40*0.19)
     print("Nuwonmai!",end="",flush=True)
   # ascii art by Deelkar: https://www.asciiart.eu/mythology/devils
   message='''\
@@ -42,7 +42,7 @@ def freakout():
 = PRESS Ctl-L to refresh the screen and remove daemonic defacements =
 =====================================================================
 '''
-  printstr_pos(message,30)
+  printstr_pos(message,0)
 
 def main():
   time.sleep(15)

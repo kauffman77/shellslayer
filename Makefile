@@ -17,10 +17,10 @@ build :
 	docker build -t $(USER)/$(REPO):$(TAG) .
 
 run :
-	docker run -it $(USER)/$(REPO):$(TAG)
+	docker run -it --rm $(USER)/$(REPO):$(TAG)
 
 run-bash :
-	docker run -it $(USER)/$(REPO):$(TAG) /usr/bin/bash
+	docker run -it --rm $(USER)/$(REPO):$(TAG) /usr/bin/bash
 
 push :
 	docker push $(USER)/$(REPO):$(TAG)
