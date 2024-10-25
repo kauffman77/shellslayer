@@ -3,8 +3,9 @@ Beware, dear paladin: you are entering a woeful forest of folders,
 twisted directories riddled with dead ends.  It is rumored that the
 Daemon haunts these parts at times and that there is an altar.txt
 somewhere within containing one of its names. I have searched but
-become befuddled by the depths of directory.  If only one could `find`
-that altar.txt, but what power could possibly traverse such an tangle?
+become befuddled by the depths of directories.  If only one could
+`find` that altar.txt, but what power could possibly traverse such a
+tangle?
 
 # Objective
 This directory contains a large number of subdirectories with a single
