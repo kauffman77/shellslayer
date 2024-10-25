@@ -46,6 +46,9 @@ def main(cmd_args):
   res = setup_level_15_find(names)
   rootpass.append(res)
 
+  res = setup_level_20_sed(names)
+  rootpass.append(res)
+
   rootpass_str = ''.join(rootpass)
 
   with open("rootpass.txt","w") as fout:
@@ -174,6 +177,20 @@ def setup_level_15_find(names):
       shell(f"echo '{name} was here: Mwa ha ha ha ha!' > {level_dir}/{dname}/altar.txt")
     else:
       shell(f"touch {level_dir}/{dname}/dead_end")
+  return name
+      
+def setup_level_20_sed(names):
+  name = names.pop()            # pick last name and remove it
+  lvl="level_20_sed"
+  level_dir = f"{USER_HOME}/{lvl}"
+  readme=f"{lvl}/README.md"
+  shell(f"mkdir {level_dir}")
+  shell(f"cp {readme} {level_dir}")
+  shell(f"cp {lvl}/defaced-*.txt {level_dir}")    # copy defaced cantos files
+  monitor=f"{lvl}/monitor_sed.sh"             # setup and start monitor
+  shell(f"sed -i.bk 's/DEMONNAME/{name}/g;' {monitor}")
+  shell(f"chmod u+x {monitor}")
+  shell(f"{monitor} {level_dir} &")
   return name
       
 
