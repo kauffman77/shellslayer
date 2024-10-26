@@ -20,6 +20,12 @@ function hint_off {
     initial_hint=""
 }
 
-export PS1='$initial_hint\w\$ '
+function log_check {
+    if [[ -e ~/LOG.txt && ! -z "$(find ~/LOG.txt -mmin -1)" ]]; then
+        printf "UPDATE to ~/LOG.txt\n\r"
+    fi
+}
+
+export PS1='$initial_hint$(log_check)(\w)\$ '
 
 

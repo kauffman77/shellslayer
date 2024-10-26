@@ -25,7 +25,11 @@ notes on the current status / progress.
 - might use the prompt as a place to execute new code each time a
   command is run; prevents entering certain directories, experts can
   disable via changing their init script
-
+- for monitor processes which check for completion conditions, ensure
+  that parameters like the demon name are not present on its command
+  line and thereby accessibly via ps; use sed to modify the script and
+  substitute some parameters in so that they are part of the script
+  text itself 
 
 * Levels
 ** DONE cat, more/less to view files
@@ -39,13 +43,14 @@ INSTRUCTIONS.txt` to start from the beginning and page the results."
 ** DONE Shell loops to rename files
 ** DONE grep to search single large files / collections of files
 Has limited recursive search which could be expanded
-** TODO find to traverse directories and locate a file
+** DONE find to traverse directories and locate a file
+** DONE "vimpire" level: edit a text file
+Make changes so that certain fields are present which will reveal a
+name; best done with vi or nano
+** DONE sed to do light modifications of streams
 ** TODO find to remove all files of a specific name
 Need a monitor process that watches for this and reveals a name when
 the files are removed
-** TODO "vimpire" level: edit a text file
-Make changes so that certain fields are present which will reveal a
-name; best done with vi or nano
 ** TODO diff of files to show the differences
 - single letter of the daemons name is in spread across the two files;
   the diff will show single letters in file that show the differing
@@ -55,7 +60,6 @@ name; best done with vi or nano
 ** TODO Directory diff
 shows a number of files that are not in a baseline directory but are
 in the other; perhaps just name the file after the daemon name
-** TODO sed to do light modifications of streams
 ** TODO awk for heavier modifications, parsing of columnar data
 ** TODO Background procs running continuously / periodically via cron
 Use ~ps -A~ to find the procs, examination of process tree to kill

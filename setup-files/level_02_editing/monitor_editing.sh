@@ -5,6 +5,8 @@
 # PHRASE: Phrase which must appear at the end of the README.md
 # TIMES: number of times that the phrase must occur at the end of README.md
 
+source /setup-files/monitor_utils.sh
+
 WORKDIR=$1
 cd $WORKDIR
 
@@ -22,6 +24,13 @@ done
 
 echo DEMONNAME > $PWD/altar.txt
 
-echo ""
-echo "SPIRIT: Your supplication pleases me, paladin."
-echo "SPIRIT: The demon's name is on the altar : $PWD/altar.txt"
+message="SPIRIT: Your supplication pleases me, paladin.
+SPIRIT: The demon's name is on the altar here:
+        $PWD/altar.txt"
+
+log_message "$message"
+banner_top "$message"
+
+# echo ""
+# echo "SPIRIT: Your supplication pleases me, paladin."
+# echo "SPIRIT: The demon's name is on the altar : $PWD/altar.txt"

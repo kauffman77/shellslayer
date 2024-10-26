@@ -72,8 +72,8 @@ def setup_level_02_editing(names):
   readme=f"{lvl}/README.md"
   monitor=f"{lvl}/monitor_editing.sh"
   shell(f"mkdir {level_dir}")
-  beg_phrase=r'''oh benevolent spirit... plz aid my quest and reveal demon"s name??'''
-  end_phrase=r'''Oh benevolent spirit, PLEASE aid my quest and reveal demon's name!!'''
+  beg_phrase=r'''oh benevolent spirit... plz aid my quest and reveal the demon"s name??'''
+  end_phrase=r'''Oh benevolent spirit, PLEASE aid my quest and reveal the demon's name!!'''
   times=5
   shell(f"sed 's/PHRASE/{beg_phrase}/g' {readme} > {level_dir}/README.md")
   shell(f'''sed -i.bk "s/PHRASE/{end_phrase}/g; s/TIMES/{times}/g; s/DEMONNAME/{name}/g" {monitor}''')
