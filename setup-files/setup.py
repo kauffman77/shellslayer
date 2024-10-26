@@ -90,6 +90,8 @@ def setup_level_05_grep(names):
   prevname = rootpass[-1]       # name from previous phase
   level_dir = f"{USER_HOME}/{lvl}"
   shell(f"mkdir -p {level_dir}")
+  readme=f"{lvl}/README.md"
+  shell(f"cp {readme} {level_dir}")
 
   dante_file = f'{lvl}/dantes-inferno.txt'
   dante_lines = None
@@ -186,6 +188,8 @@ def setup_level_20_sed(names):
   readme=f"{lvl}/README.md"
   shell(f"mkdir {level_dir}")
   shell(f"cp {readme} {level_dir}")
+  shell(f"chmod u+x {lvl}/deface.sh")
+  shell(f"cd {lvl} && ./deface.sh")
   shell(f"cp {lvl}/defaced-*.txt {level_dir}")    # copy defaced cantos files
   monitor=f"{lvl}/monitor_sed.sh"             # setup and start monitor
   shell(f"sed -i.bk 's/DEMONNAME/{name}/g;' {monitor}")

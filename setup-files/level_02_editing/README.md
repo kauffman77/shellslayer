@@ -36,7 +36,8 @@ terminal-based editors that are installed.
 
 If you are looking at this README in the terminal via cat or less,
 then in a moment, run one of the above commands to open this file in
-that editor. If you're already using an editor to view this file, th
+that editor. If you're already using an editor to view this file, then
+proceed onward.
 
 WARNING: If this is your first time using either `vi` or `nano`, there
 is a bit of a learning curve so you may wish to read the below
@@ -93,7 +94,8 @@ extremely useful.
 |-----------|----------------------------------------------------------------------------------------|
 
 The above commands are a minuscule fraction of the commands vi
-offers. They are enough
+offers. They are, however, enough to do the basic editing required
+here.
 
 ## Other Editors
 There are no other editors currently installed.
@@ -107,7 +109,7 @@ installed by default. This is unfortunately not the case with emacs.
 Paladin: have you acquainted thyself with an EDITOR? They are all
 powerful allies though this land is bereft of the emperor of editors,
 Emacs. In case you have forgotten, others have told that a proper
-supplication to the spirit within will follow these tenants:
+supplication to the spirit within will follow these tenets:
 
 - Use capitalization at the beginning of sentences
 - Never dawdle with ellipses (...) and rather use commas

@@ -21,6 +21,9 @@ concatenated, these names become the root password for this system to
 allow the user to become root and end the daemon process.
 
 
+ADVICE: write down the names that you learn in the order of the levels
+are numbered. One of the Daemon names is in this file.
+
 # Level Guidance
 This level introduces the command line tools `cat` and `less` which
 allow text to be displayed while in a terminal. The command
@@ -64,9 +67,12 @@ environment variable; often `PAGER=less` so when a user types
 to get information on the `ls` command, `less` is used to allow paging
 up/down in the information displayed.
 
+Hint: scrolling through the below is fine but doing regular expression
+search for the Daemon may be more expedient.
+
 # Flavor
 Ten thousand thanks to you, brave paladin, for agreeing to help. Only
-the Daemon would dare interject amid expression gratitude to you!
+the Daemon would dare interject amid my expression gratitude to you!
 
 Thank you number     1 to you, paladin!
 Thank you number     2 to you, paladin!
@@ -93,6 +99,10 @@ Thank you number    22 to you, paladin!
 Thank you number    23 to you, paladin!
 Thank you number    24 to you, paladin!
 Thank you number    25 to you, paladin!
+
+Paladin, are you still listening? Or did you Regex Search ahead in
+search of the Daemon? (type /Daemon <enter>)
+
 Thank you number    26 to you, paladin!
 Thank you number    27 to you, paladin!
 Thank you number    28 to you, paladin!

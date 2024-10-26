@@ -9,4 +9,4 @@ s/Mary/Pippin/g;\
 
 cat paradiso.txt | \
     sed "$subs"  | \
-    awk 'BEGIN{c=0}/Canto/{c++}{print > sprintf("canto-defaced-%02d.txt",c)}' 
+    awk 'BEGIN{c=0}/Canto/{c++}{print > sprintf("defaced-canto-%02d.txt",c)}' 
