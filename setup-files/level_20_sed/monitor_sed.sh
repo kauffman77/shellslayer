@@ -1,7 +1,13 @@
 #!/usr/bin/bash
 
+# Checks for presence of canto-[0-9]*.txt files and if around,
+# concatenates all their contents; when the concatenation matches the
+# original paradiso.txt file, then complete the level
+# 
 # Substitutions to perform
 # DEMONNAME: name of daemon to reveal
+
+source /setup-files/monitor_utils.sh
 
 WORKDIR=$1
 cd $WORKDIR
@@ -19,7 +25,10 @@ done
 
 echo DEMONNAME > $PWD/altar.txt
 
-echo ""
-echo "POET: Restored to glory, my verse doth shine."
-echo "POET: On the altar, a demon's name shall you find : $PWD/altar.txt"
-echo "POET: Grazie mille, paladin."
+message="POET: Restored to glory, my verse doth shine.
+POET: On the altar, a demon's name shall you find:
+      $PWD/altar.txt
+POET: Grazie mille, paladin."
+
+log_message "$message"
+banner_top "$message"

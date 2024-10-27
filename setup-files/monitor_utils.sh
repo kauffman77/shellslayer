@@ -39,6 +39,11 @@ function banner_top {
     ((n++))
     printf "\033[$n;0H"
     clear_line
+    printf "== %-54s ==" "Press Ctrl-l or type reset to restore the screen"
+    ((n++))
+    printf "\033[$n;0H"
+    clear_line
+    printf "%s\n" "$border"
 }
 
 # add a message to the home directory log

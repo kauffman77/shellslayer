@@ -3,7 +3,10 @@
 # Checks current working directory for conversion of .dat files to
 # .txt files
 # 
+# Substitutions to perform
 # DEMONNAME: name of daemon to reveal
+
+source /setup-files/monitor_utils.sh
 
 WORKDIR=$1
 
@@ -22,7 +25,11 @@ done
 
 echo DEMONNAME > $PWD/altar.txt
 
-echo ""
-echo "MONITOR: At last the files have sane extensions...."
-echo "MONITOR: The demon's name is on the altar : $PWD/altar.txt"
+message="COUNTER: At last the files have sane extensions....
+COUNTER: The demon's name is on the altar here:
+$PWD/altar.txt"
+
+log_message "$message"
+banner_top "$message"
+
     
