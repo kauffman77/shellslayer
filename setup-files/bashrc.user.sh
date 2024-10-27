@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-echo 'WELCOME!'
+echo 'WELCOME PALADIN!'
 echo 'You sense a foul presence in the process tree....'
 echo ''
 
@@ -13,10 +13,10 @@ export INITIAL_HINT=1
 
 initial_hint='A wild README.md appeared. Try typing:
 >> cat README.md
-Type `hint_off` to disable this hint
+Type `firstoff` to disable this hint
 '
 
-function hint_off {
+function firstoff {
     initial_hint=""
 }
 
