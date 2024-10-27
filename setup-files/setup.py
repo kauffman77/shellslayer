@@ -204,6 +204,9 @@ def setup_level_99_su_kill(names):
   readme=f"{lvl}/README.md"
   shell(f"mkdir {level_dir}")
   shell(f"cp {readme} {level_dir}")
+  monitor=f"{lvl}/monitor_win"             # setup and start monitor
+  shell(f"chmod u+x {monitor}")
+  shell(f"{monitor} &")
   return None
 
 if __name__ == '__main__':

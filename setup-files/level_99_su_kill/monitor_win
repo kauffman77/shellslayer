@@ -1,0 +1,70 @@
+#!/usr/bin/python3
+
+import random
+import time
+import os
+
+def put_cursor(row,col):
+  """Puts the cursor at the given row/col in the terminal"""
+  print(f"\033[{row};{col}H",end="")
+
+def hide_cursor():
+  """Hide the terminal cursor """
+  print(f"\033[?25l",end="")
+
+def show_cursor():
+  """Show the terminal cursor"""
+  print(f"\033[?25h",end="")
+
+def printstr_pos(string,startrow):
+  '''Uses terminal cursor positioning to print a message.
+
+  Without position, programs like vi / nano / less screw up the
+  printing of newline-based messages; this funciton prevents that
+
+  '''
+  lines = string.splitlines()
+  for (i,line) in enumerate(lines):
+    put_cursor(startrow+i,0)
+    print(line,end="",flush=True)
+  put_cursor(startrow+len(lines),0)
+
+def scrolldown_topbanner(msg,delay_sec):
+  """Scroll down a multiline banner message from the top of the screen"""
+  hide_cursor()
+  lines = msg.splitlines()
+  for i in range(len(lines)):
+    endlines = lines[-(i+1):]
+    for (r,line) in enumerate(endlines):
+      printstr_pos(line,r+1)
+    time.sleep(delay_sec)
+  show_cursor()
+
+
+passfile="/setup-files/passmsg.txt"  # for container
+daemon_prog="daemon"
+
+# passfile="../passmsg.txt"            # for testing
+# daemon_prog="testprog"
+
+def main():
+  passmsg=""                    # read in the 
+  with open(passfile,"r") as f:
+    passmsg=f.read()
+
+  time.sleep(3)                 # 3 second delay to let daemon to
+  # start ideally sould start this monitor after the daemon starts to
+  # alleviate this concurrency danger but this would buck the current
+  # setup wherein each level setup function starts any monitors
+  # needed; may wish to add a hook that accumulates late-start
+  # monitors that should be started after the daemon but this is
+  # sufficient for now
+
+  while True:                   # wait until daemon has been killed
+    status = os.system(f"pgrep {daemon_prog} > /dev/null")
+    exit_code = os.waitstatus_to_exitcode(status)
+    if exit_code!=0:
+      break
+  scrolldown_topbanner(passmsg,0.1)
+
+main()
