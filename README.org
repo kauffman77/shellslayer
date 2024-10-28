@@ -2,7 +2,7 @@
 A shell tutorial with a daemonic twist that uses Docker containers for
 a stable environment.
 
-* Running the Tutorial
+* Running the Exercise
 To simply run the tutorial you'll need to
 1. [[https://docs.docker.com/engine/install/][Install Docker]] on your platform
 2. Start Docker, often by running the "Docker Desktop" program,
@@ -21,14 +21,37 @@ To simply run the tutorial you'll need to
 which will download a container (shell environment) and start the
 exorcism... er exercise.
 
-If you suspect that your version of the Shellslayer container is out
+If you suspect that your version of the ShellSlayer container is out
 of date, run the following command to update to the latest image.
 #+BEGIN_SRC sh
 >> docker image pull kauffman77/shellslayer
 #+END_SRC
+Then use one of the ~docker run~ commands above.
+
+* Basic Commands for Use During the Exercise
+The following are a short list of common Unix commands that will be
+useful during the tutorial. Most good Unix tutorials will discuss more
+detail on these but this short reference is worth knowing
+
+|----------------+-----------------------------------------------------------------------------|
+| Command        | Effect                                                                      |
+|----------------+-----------------------------------------------------------------------------|
+| ~cd dirA~      | Change the shells working directory (folder) to ~dirA~                      |
+| ~cd~           | With no arguments change to the user home directory                         |
+| ~ls~           | List the files that are in the current directory                            |
+| ~ls -l~        | Do a long listing that shows additional information about files             |
+| ~pwd~          | Print the working directory; shows what folder the shell is currently in    |
+| ~cat file.txt~ | Print the contents of ~file.txt~ in the terminal                            |
+|----------------+-----------------------------------------------------------------------------|
+| Ctrl-l         | (Hold Ctrl key and press ~L~) Refresh the screen if it becomes distorted    |
+| Up Arrow       | Recall previous commands; repeatedly press Up to go further back in history |
+| Down Arrow     | Scroll back to more recent commands if in history                           |
+| Ctrl-c         | (Hold Ctrl key and press ~C~) Interrupt a command and show the prompt       |
+|----------------+-----------------------------------------------------------------------------|
 
 
-* Building / Modifying the Tutorial
+
+* Building / Modifying the Exercise Container
 The provided ~Makefile~ is barebones and oriented towards Linux but
 allows slightly quicker builds / runs during development. Type ~make
 help~ to get the basics.
@@ -53,3 +76,6 @@ A typical development cycle might add a new level as a subdirectory to
 ~setup-files/~, modify the ~setup.py~ program to create the phase
 during tutorial startup, the do a ~make build~ followed by ~make run~
 to test it.
+
+Some design notes and TODO items are in the ~NOTES.org~ file for those
+interested in contributing.
