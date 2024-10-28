@@ -39,16 +39,15 @@ detail on these but this short reference is worth knowing
 | ~cd dirA~      | Change the shells working directory (folder) to ~dirA~                      |
 | ~cd~           | With no arguments change to the user home directory                         |
 | ~ls~           | List the files that are in the current directory                            |
-| ~ls -l~        | Do a long listing that shows additional information about files             |
+| ~ls -l~        | (~-l~ is a lowercase L) Do a long listing that shows additional file info   |
 | ~pwd~          | Print the working directory; shows what folder the shell is currently in    |
 | ~cat file.txt~ | Print the contents of ~file.txt~ in the terminal                            |
 |----------------+-----------------------------------------------------------------------------|
-| Ctrl-l         | (Hold Ctrl key and press ~L~) Refresh the screen if it becomes distorted    |
+| Ctrl-L         | (Hold Ctrl key and press ~L~) Refresh the screen if it becomes distorted    |
 | Up Arrow       | Recall previous commands; repeatedly press Up to go further back in history |
 | Down Arrow     | Scroll back to more recent commands if in history                           |
-| Ctrl-c         | (Hold Ctrl key and press ~C~) Interrupt a command and show the prompt       |
+| Ctrl-C         | (Hold Ctrl key and press ~C~) Interrupt a command and show the prompt       |
 |----------------+-----------------------------------------------------------------------------|
-
 
 
 * Building / Modifying the Exercise Container
