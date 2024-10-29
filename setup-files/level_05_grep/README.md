@@ -8,7 +8,7 @@ an arduous and while one may search parts of it using tools such as
 on individual chapters in the `cantos` directory, each of which must
 be searched on individually.
 
-Thankfully a once might program know only as ED bestowed a power upon
+Thankfully a once mighty program know only as ED bestowed a power upon
 the land to help you before it shrank into obscurity.  Master the
 power of GREP to search for the daemon's previous name and you will
 surely find the daemon's next name.

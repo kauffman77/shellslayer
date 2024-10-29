@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# # Start the first process
-# ./loop_sleep_print.sh 5 "Periodic Message" &
-
-DEBUG=1
-
+DEBUG=0
+SEED=1234
 # perform basic setup in the setup-files directory
 cd setup-files
 
@@ -14,13 +11,13 @@ useradd -s /usr/bin/bash -m -g users paladin
 # -m : create a home directory for user
 # -g users : add to group "users"
 mv bashrc.user.sh /home/paladin/.bashrc
-python3 setup.py 12345
+python3 setup.py $SEED
 chmod -R og-rwX .               # remove permissions on setup files
 
 rootpass=$(cat rootpass.txt)    # grab root password from the file created during setup
 echo "root:$rootpass" | chpasswd
 
-if [[ ! -z "$DEBUG" ]]; then    # if debugging, show the root password
+if [[ "$DEBUG" == "1" ]]; then    # if debugging, show the root password
     echo "root password is '$rootpass'"
 fi
 

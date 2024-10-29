@@ -1,6 +1,7 @@
 USER = kauffman77
 REPO = shellslayer
 TAG = latest
+# TAG = F2024
 # TAG = v0.1
 
 help :
