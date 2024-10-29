@@ -1,0 +1,227 @@
+% Created 2024-10-29 Tue 16:47
+% Intended LaTeX compiler: pdflatex
+\documentclass[mathserif]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue}
+\graphicspath{{./figs/}}  %% Where the figures live
+\usenavigationsymbolstemplate{}
+\usepackage{lmodern}
+\usepackage[useregional=numeric]{datetime2}
+\setbeamertemplate{footline}{ \hfill \raisebox{5pt}{ \insertframenumber \hspace{2pt}} }
+\usepackage{xcolor}
+\usepackage[cachedir=/home/kauffman/tmp/minted-cache]{minted}
+\usemintedstyle{kauffman}
+\usepackage{xpatch}
+\xpatchcmd{\mintinline}{\begingroup}{\begingroup\let\itshape\relax}{}{}
+\xpatchcmd{\minted}{\VerbatimEnvironment}{\VerbatimEnvironment\let\itshape\relax}{}{}
+\usepackage{relsize} %% used to decrease existing font size
+%% type writer font for line numbers
+\renewcommand{\theFancyVerbLine}{\ttfamily \textsmaller[1]{\arabic{FancyVerbLine}}}
+\usetheme{default}
+\author{Chris Kauffman}
+\date{\it Last Updated: \newline \input{|"/usr/bin/date"}}
+\title{ShellSlayer Fall 2024 Workshop}
+\hypersetup{
+ pdfauthor={Chris Kauffman},
+ pdftitle={ShellSlayer Fall 2024 Workshop},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.4 (Org mode 9.6.15)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\begin{frame}[label={sec:org602ceab}]{Preamble}
+Visit: \url{https://go.umd.edu/shellslayer}
+\begin{itemize}
+\item Includes link to github page for ShellSlayer
+\item Has a Feedback Form to fill in at the end of this session
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:orgaf8cf21}]{Welcome Slayers}
+\begin{block}{Immediate Goals}
+\begin{itemize}
+\item Illustrate Docker as a way to get a shell environment / run programs
+\item Learn a some useful Unix commands and shell tricks that may improve
+your life on the command line
+\item Have some fun and eat some candy
+\end{itemize}
+\end{block}
+
+\begin{block}{Long Term Goals}
+\begin{itemize}
+\item Consider contributing to the tutorial via playtesting, writing
+levels, etc.
+\item Add some levels on some topics not covered
+\end{itemize}
+\end{block}
+
+\begin{block}{Thank yous}
+\begin{itemize}
+\item ACM leaders who invited me to join you (Mihir and Ishan)
+\item ACM playtesters and facilitators
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org4a09b8b}]{Docker Setup}
+\vspace{-.4in}
+\begin{columns}
+\begin{column}{.75\columnwidth}
+\begin{block}{}
+If you've not installed Docker already, search the internet for
+\textbf{``Install Docker''} and follow the instructions
+\end{block}
+\end{column}
+\begin{column}{.25\columnwidth}
+\begin{block}{}
+\begin{center}
+\includegraphics[width=\textwidth]{docker-logo.png}
+\end{center}
+\end{block}
+\end{column}
+\end{columns}
+
+\begin{block}{}
+\vspace{-.2in}
+\begin{itemize}
+\item Docker is a system by which ``containers'' can be set up to run
+programs
+\item Containers provide a skeleton operating system along with
+libraries/utilities so that programs can run reliably
+\item Similar in spirit to Virtual Machines or Emulation BUT has some
+technical distinctions which you can read about on your own time
+\item Docker allows for download/run of containers with programs in them
+via a GUI (blegh) or command line (yay!)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:orgffcac64},fragile]{Running Shell Slayer}
+ Start the ``Docker Desktop'' application (via clicking things) then use
+a command shell to download / run the shellslayer image via:
+
+\footnotesize
+\begin{block}{Windows: \texttt{cmd.exe}}
+\begin{minted}[numbersep=0.5em]{sh}
+>> docker run -it --rm kauffman77/shellslayer
+\end{minted}
+\end{block}
+
+\begin{block}{MacOS: \texttt{Terminal.app}}
+\begin{minted}[numbersep=0.5em]{sh}
+>> docker run -it --rm --platform=linux/amd64 kauffman77/shellslayer
+\end{minted}
+\end{block}
+
+\begin{block}{Linux: Terminal Emulator of Choice}
+\begin{minted}[numbersep=0.5em]{sh}
+>> sudo docker run -it --rm kauffman77/shellslayer
+\end{minted}
+\texttt{sudo} may not be necessary depending on your system config
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org993e73f},fragile]{Structure of the Exercise}
+ \begin{description}
+\item[{daemon (noun)}] \begin{enumerate}
+\item Archaic spelling of demon
+\item In multitasking computer operating systems, a program that runs
+as a background process rather than being under the direct
+control of an interactive user.
+\end{enumerate}
+\end{description}
+
+\normalsize
+\emph{You sense a foul presence in the process tree\ldots{}}
+\begin{itemize}
+\item A ``Daemon'' process is present in the system and must be killed.
+\item To do so, you must switch to be the Root user (administrator)
+\item Becoming root requires a password
+\item Each level (\texttt{level\_00\_less}, \texttt{level\_02\_editing}, \ldots{}) teaches about
+a Unix tool/technique and when completed properly will reveal part
+of the root password (one of the Daemon's names)
+\item Complete all levels to obtain, get the whole password, and slay the
+Daemon
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[label={sec:org641d776},fragile]{Workshop Plan}
+ \vspace{-.2in}
+\begin{columns}
+\begin{column}{1.1\columnwidth}
+\begin{block}{}
+\begin{center}
+\begin{tabular}{lrl}
+\hline
+Level & Name & Overview\\[0pt]
+\hline
+\texttt{level\_00\_less} & 1 & Viewing text files with \texttt{cat / less}\\[0pt]
+\texttt{level\_02\_editing} & 2 & Editing text files with \texttt{vi / nano}\\[0pt]
+\texttt{level\_05\_grep} & 3 & Searching for text with \texttt{grep}\\[0pt]
+\texttt{level\_10\_sh\_loops} & 4 & Looping over files in the shell\\[0pt]
+\texttt{level\_15\_find} & 5 & Locating files with \texttt{find}\\[0pt]
+\texttt{level\_20\_sed} & 6 & Substituting text in files with \texttt{sed}\\[0pt]
+\texttt{level\_99\_su\_kill} & - & Changing to ``root'' and killing processes\\[0pt]
+\hline
+\end{tabular}
+\end{center}
+
+For each level\ldots{}
+\begin{itemize}
+\item Give a short overview
+\item Give participants a few minutes to try the commands and solve the exercise
+\item Regroup to discuss the stage solution and fill in a Daemon name
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+
+\begin{frame}[label={sec:org6eba470},fragile]{Thank You for Your Participation}
+ \textbf{Participant Feedback at \url{https://go.umd.edu/shellslayer}}
+
+
+\vspace{-.2in}
+\begin{columns}
+\begin{column}{.5\columnwidth}
+\begin{block}{}
+\begin{itemize}
+\item If you enjoyed the workshop and have feedback, provide it in the
+survey
+\item If you are interested in contributing to the tutorial, email me 
+\begin{verbatim}
+<profk@umd.edu>
+\end{verbatim}
+\end{itemize}
+\end{block}
+\end{column}
+
+\begin{column}{.5\columnwidth}
+\begin{block}{}
+\begin{center}
+\includegraphics[width=\textwidth]{witcher-geralt.jpg}
+\end{center}
+\emph{The world doesn't need a hero.}
+
+\emph{It needs a professional.}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+\end{document}

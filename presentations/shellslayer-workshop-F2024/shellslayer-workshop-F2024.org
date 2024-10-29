@@ -1,0 +1,171 @@
+#+TITLE: ShellSlayer Fall 2024 Workshop
+#+STARTUP: showall
+#+STARTUP: beamer
+#+INCLUDE: ./header_minted.org
+
+* Preamble
+Visit: https://go.umd.edu/shellslayer
+- Includes link to github page for ShellSlayer
+- Has a Feedback Form to fill in at the end of this session
+
+* Welcome Slayers
+** Immediate Goals
+- Illustrate Docker as a way to get a shell environment / run programs
+- Learn a some useful Unix commands and shell tricks that may improve
+  your life on the command line
+- Have some fun and eat some candy
+
+** Long Term Goals
+- Consider contributing to the tutorial via playtesting, writing
+  levels, etc.
+- Add some levels on some topics not covered
+
+** Thank yous
+- ACM leaders who invited me to join you (Mihir and Ishan)
+- ACM playtesters and facilitators
+
+* Docker Setup
+#+LATEX:\vspace{-.4in}
+** Cols								  :B_columns:
+   :PROPERTIES:
+   :BEAMER_env: columns
+   :BEAMER_OPT: 
+   :END:
+
+*** 
+   :PROPERTIES:
+   :BEAMER_col: .75
+   :BEAMER_env: block
+   :END:
+
+If you've not installed Docker already, search the internet for
+*"Install Docker"* and follow the instructions
+*** 
+   :PROPERTIES:
+   :BEAMER_col: .25
+   :BEAMER_env: block
+   :END:
+#+BEGIN_CENTER
+#+ATTR_LATEX: :width \textwidth
+file:docker-logo.png
+#+END_CENTER
+
+** 
+#+LATEX:\vspace{-.2in}
+- Docker is a system by which "containers" can be set up to run
+  programs
+- Containers provide a skeleton operating system along with
+  libraries/utilities so that programs can run reliably
+- Similar in spirit to Virtual Machines or Emulation BUT has some
+  technical distinctions which you can read about on your own time
+- Docker allows for download/run of containers with programs in them
+  via a GUI (blegh) or command line (yay!)
+
+* Running Shell Slayer
+Start the "Docker Desktop" application (via clicking things) then use
+a command shell to download / run the shellslayer image via:
+
+#+LATEX:\footnotesize
+** Windows: ~cmd.exe~
+#+BEGIN_SRC sh
+>> docker run -it --rm kauffman77/shellslayer
+#+END_SRC
+
+** MacOS: ~Terminal.app~
+#+BEGIN_SRC sh
+>> docker run -it --rm --platform=linux/amd64 kauffman77/shellslayer
+#+END_SRC
+
+** Linux: Terminal Emulator of Choice
+#+BEGIN_SRC sh
+>> sudo docker run -it --rm kauffman77/shellslayer
+#+END_SRC
+~sudo~ may not be necessary depending on your system config
+
+* Structure of the Exercise
+# #+LATEX:\footnotesize
+- daemon (noun) ::
+  1. Archaic spelling of demon
+  2. In multitasking computer operating systems, a program that runs
+     as a background process rather than being under the direct
+     control of an interactive user.
+
+#+LATEX:\normalsize
+/You sense a foul presence in the process tree.../
+- A "Daemon" process is present in the system and must be killed.
+- To do so, you must switch to be the Root user (administrator)
+- Becoming root requires a password
+- Each level (~level_00_less~, ~level_02_editing~, ...) teaches about
+  a Unix tool/technique and when completed properly will reveal part
+  of the root password (one of the Daemon's names)
+- Complete all levels to obtain, get the whole password, and slay the
+  Daemon
+
+
+* Workshop Plan
+#+LATEX:\vspace{-.2in}
+** Cols								  :B_columns:
+   :PROPERTIES:
+   :BEAMER_env: columns
+   :BEAMER_OPT: 
+   :END:
+
+*** 
+   :PROPERTIES:
+   :BEAMER_col: 1.1
+   :BEAMER_env: block
+   :END:
+
+|---------------------+------+------------------------------------------|
+| Level               | Name | Overview                                 |
+|---------------------+------+------------------------------------------|
+| ~level_00_less~     |    1 | Viewing text files with ~cat / less~     |
+| ~level_02_editing~  |    2 | Editing text files with ~vi / nano~      |
+| ~level_05_grep~     |    3 | Searching for text with ~grep~           |
+| ~level_10_sh_loops~ |    4 | Looping over files in the shell          |
+| ~level_15_find~     |    5 | Locating files with ~find~               |
+| ~level_20_sed~      |    6 | Substituting text in files with ~sed~    |
+| ~level_99_su_kill~  |    - | Changing to "root" and killing processes |
+|---------------------+------+------------------------------------------|
+
+For each level...
+- Give a short overview
+- Give participants a few minutes to try the commands and solve the exercise 
+- Regroup to discuss the stage solution and fill in a Daemon name
+
+
+
+* Thank You for Your Participation
+*Participant Feedback at https://go.umd.edu/shellslayer*
+
+
+#+LATEX:\vspace{-.2in}
+** Cols								  :B_columns:
+   :PROPERTIES:
+   :BEAMER_env: columns
+   :BEAMER_OPT: 
+   :END:
+
+*** 
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :BEAMER_env: block
+   :END:
+- If you enjoyed the workshop and have feedback, provide it in the
+  survey
+- If you are interested in contributing to the tutorial, email me 
+  : <profk@umd.edu>
+
+*** 
+   :PROPERTIES:
+   :BEAMER_col: .5
+   :BEAMER_env: block
+   :END:
+
+#+BEGIN_CENTER
+#+ATTR_LATEX: :width \textwidth
+file:witcher-geralt.jpg
+#+END_CENTER
+/The world doesn't need a hero./
+
+/It needs a professional./
