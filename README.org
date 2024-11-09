@@ -52,8 +52,8 @@ detail on these but this short reference is worth knowing
 
 * Building / Modifying the Exercise Container
 The provided ~Makefile~ is barebones and oriented towards Linux but
-allows slightly quicker builds / runs during development. Type ~make
-help~ to get the basics.
+allows slightly quicker builds / runs during development. 
+Type ~make help~ to get the basics.
 
 #+BEGIN_SRC sh
 >> make help
