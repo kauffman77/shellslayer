@@ -4,9 +4,13 @@
 #+INCLUDE: ./header_minted.org
 
 * Preamble
+
 Visit: https://go.umd.edu/shellslayer
 - Includes link to github page for ShellSlayer
 - Has a Feedback Form to fill in at the end of this session
+
+If you wore a costume *come get some candy.*  If there is any left,
+others can partake
 
 * Welcome Slayers
 ** Immediate Goals
