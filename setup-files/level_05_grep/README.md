@@ -1,12 +1,12 @@
 # Flavor
 Beware, paladin: in these directories it is said that the favored text
-of the daemon lies. It speaks of a journey to dark places but excites
-the daemon so greatly that it at time inadvertently mutters one of its
-own names which is laid down in the mysterious text. The text is long
-an arduous and while one may search parts of it using tools such as
-`less`, it will be tedious, especially as the daemon sometimes dwells
-on individual chapters in the `cantos` directory, each of which must
-be searched on individually.
+of the daemon lies. The text relates a journey to dark places. While
+reading it, the daemon often grows excited and inadvertently scribbles
+one of its names into the text. The text is long an arduous and while
+one may search parts of it using tools such as `less`, it will be
+tedious, especially as the daemon sometimes dwells on individual
+chapters in the `cantos` directory, each of which must be searched on
+individually.
 
 Thankfully a once mighty program know only as ED bestowed a power upon
 the land to help you before it shrank into obscurity.  Master the
@@ -40,3 +40,16 @@ The classic searching tool is `grep` which can be used as follows.
 `grep` understand a variety of regular expression syntax as well but
 only a few regex tricks are useful for this exercise.
 
+The search phrase like abc does not need to be quotes if it is a
+single word; any phrase that spaces must be quoted.
+
+EXAMPLES:
+grep 'hello' file.txt
+OR
+grep hello file.txt
+
+grep 'hello world' file.txt  - must have quotes due to the space in
+the search phrase.
+
+NOTE: you do not need to edit any files in this exercise, only search
+them for answers.

@@ -69,7 +69,7 @@ vi is the classic Unix editor with a near vertical learning
 curve. Once a user is acquainted with its command set and modal
 nature, text can be manipulated very quickly. However, acquiring skill
 with vi is a loooong process. Since it is nearly universally available
-on Unix systems, know a few tricks with it to do quick edits is
+on Unix systems, knowing a few tricks with it to do quick edits is
 extremely useful.
 
 |-----------|----------------------------------------------------------------------------------------|
@@ -83,7 +83,7 @@ extremely useful.
 | i         | Enter "Insert Mode" so that type 'w' will insert the letter 'w'                        |
 | Esc       | The escape key exits Insert Mode and returns to Command Mode                           |
 | j         | Insert Mode: insert the letter 'j' in the file at the cursor                           |
-|           | Command Mode: move the cursor DOWN one line                                            |
+| j         | Command Mode: move the cursor DOWN one line                                            |
 | k         | Command Mode: move the cursor UP one line                                              |
 | h         | Command Mode: move the cursor LEFT one column                                          |
 | l         | Command Mode: move the cursor RIGHT one column                                         |
@@ -96,6 +96,17 @@ extremely useful.
 The above commands are a minuscule fraction of the commands vi
 offers. They are, however, enough to do the basic editing required
 here.
+
+Classic vi has largely been subsumed by `vim`: VI Improved and so most
+coders wishing to use the vi-lineage of editors will want to study vim
+(often running `vi` actually runs vim). There are tons of tutorials
+and resources available on vi/vim. For more information, you might
+consult the following.
+- Type ':help user-manual' in vim for the extensive, built-in guide
+- Short tutorial from the Linux Foundation: 
+  https://www.linuxfoundation.org/blog/blog/classic-sysadmin-vim-101-a-beginners-guide-to-vim
+- Key binding cheat sheet: https://vim.rtorr.com/
+- Learn vim through gaming: https://vim-adventures.com/
 
 ## Other Editors
 There are no other editors currently installed.

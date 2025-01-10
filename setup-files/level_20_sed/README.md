@@ -27,7 +27,6 @@ Please repair the poem, paladin.  It may take aeons to do so with your
 text editor but I have heard that the power of Stream Editing, that of
 `sed`, may be of use in case such as this.
 
-
 # Objective
 Traditional Unix command line tools provide a wealth of programmatic
 text manipulation options.  A mid-range option is `sed`, a Stream
@@ -77,3 +76,12 @@ files need the same set of substitutions but there are many of them so
 it is intractable to open each in a text editor and perform all of
 them. Rather, `sed` combined with a shell loop and some file name
 substitution is an excellent fit for this situation.
+
+The required substitutions across all the text files are described in
+the Flavor text but are repeated here for clarity:
+| From        | To       |
+|-------------|----------|
+| ME          | Him      |
+| Doggy       | God      |
+| Beetlejuice | Beatrice |
+| Pippin      | Mary     |

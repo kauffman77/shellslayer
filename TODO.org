@@ -1,0 +1,15 @@
+- Add a closing END SUPPLICATION in level_02_editing to allow easier
+  viewing of the end of the file / e.g. region where the text should
+  be edited
+- Update level_10_sh_loops so that only the files ending exactly in
+  .txt are used, NOT .dat.txt
+- Add a mechanism to log ALL daemon names and verify them to ensure
+  the root password is known when its ready; could have an altar.txt
+  in the home directory and each name is placed in sequence in it with
+  the LOG.txt indicating correct names; when all correct names are on
+  the altar, level_99 is opened, perhaps via permission change by the
+  same monitor that checks names
+- Debugging facility needed so that quick checks can be done by
+  enabling some debugging mode; check on Docker facilities for
+  honoring environment variables or passing arguments
+

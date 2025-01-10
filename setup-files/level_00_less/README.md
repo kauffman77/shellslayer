@@ -1,7 +1,7 @@
 # Flavor
-Brave paladin, we meager denizens of this humble container are best by
+Brave paladin, we meager denizens of this humble container are beset by
 a vile **daemon**.  It vexes us with persistent alterations to our
-files, rearranging the our directories, and sewing chaos among the
+files, rearranging our directories, and sowing chaos among the
 processes. Observe its lurking presence by chanting
 ```sh
 >> ps -A

@@ -5,7 +5,7 @@ power of **ROOT** that you may finally rid the process tree of this
 abomination!
 
 # Objective
-At this point you should have acquired all of the Daemon's names. The
+At this point you should have acquired all of the Daemon's names. They
 form the root password for the Unix system in which you are logged in.
 The root or administrator password allows a user to change into the
 administrator account and carry out certain operations that normal

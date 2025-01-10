@@ -35,7 +35,9 @@ hintcmds_msg='
 |--------------+-----------------------------------------------------------------------------|
 | Ctrl-l       | (Hold Ctrl key and press L) Refresh the screen if it becomes distorted      |
 | Up Arrow     | Recall previous commands; repeatedly press Up to go further back in history |
+| Ctrl-p       | Same as up arrow (previous command in history)                              |
 | Down Arrow   | Scroll back to more recent commands if in history                           |
+| Ctrl-n       | Same as down arrow (next command in history)                                |
 | Ctrl-c       | (Hold Ctrl key and press C) Interrupt a command and show the prompt         |
 |--------------+-----------------------------------------------------------------------------|
 '
