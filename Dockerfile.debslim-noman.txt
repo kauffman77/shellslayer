@@ -1,0 +1,27 @@
+# debian-based image that omits man pages; only saves about 4MB of
+# space so not worth it
+FROM debian:12-slim
+
+ARG TARGETARCH
+
+RUN apt update
+RUN apt install -y \
+    procps \
+    file zip \
+    tmux screen w3m \
+    python3 gawk \
+    which less \
+    nano vim \
+    python3 gawk wget curl \
+    screen tmux 
+
+# RUN apt install emacs-nox
+
+COPY main.sh /main.sh
+COPY daemon /daemon
+RUN chmod u+x main.sh daemon
+COPY setup-files /setup-files
+
+CMD ./main.sh
+
+

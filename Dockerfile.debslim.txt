@@ -2,8 +2,19 @@ FROM debian:12-slim
 
 ARG TARGETARCH
 
-RUN apt update
-RUN apt install -y \
+# re-enables man pages for install
+RUN sed -i '/path-exclude \/usr\/share\/man/d' /etc/dpkg/dpkg.cfg.d/docker
+RUN sed -i '/path-exclude \/usr\/share\/groff/d' /etc/dpkg/dpkg.cfg.d/docker
+
+# update packages
+RUN apt-get update
+
+# reinstall some packages to get the manual pages
+RUN apt-get install --reinstall \
+    coreutils grep findutils diffutils bash
+
+# install additional packages needed in the tutorial
+RUN apt-get install -y \
     procps \
     file zip \
     tmux screen w3m \
@@ -13,8 +24,10 @@ RUN apt install -y \
     python3 gawk wget curl \
     screen tmux 
 
+# # uncomment to enable emacs in the build
 # RUN apt install emacs-nox
 
+# copy files over
 COPY main.sh /main.sh
 COPY daemon /daemon
 RUN chmod u+x main.sh daemon
