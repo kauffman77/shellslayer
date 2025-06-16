@@ -9,7 +9,7 @@ processes. Observe its lurking presence by chanting
 
 It is said that only the power of **ROOT** may slay this abomination
 and rid the land of its corruption. We beseech you to traverse these
-levels and seek out the true names of the daemon. Spook them at the
+levels and seek out the true names of the daemon. Speak them at the
 alter of su, become root, and save us.
 
 # Overall Objective

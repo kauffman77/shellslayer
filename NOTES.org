@@ -65,9 +65,17 @@ in the other; perhaps just name the file after the daemon name
 Use ~ps -A~ to find the procs, examination of process tree to kill
 whole lineage
 ** TODO Pipelines to show the power of combined commands
+** TODO Use of man pages
+Pun on a "wise man"; look up a specific option or two for some command
+that is needed to complete the level, perhaps a variation of grep or
+sed
+
+
 ** TODO Shell scripting to automate the whole level
 - speed run to get the "true ending"
 - Requires mounting the local directory to allow Docker container to
   access the script, start it when run
+
+
 
 ** Misc Ideas
