@@ -22,7 +22,7 @@ RUN apt-get install -y \
     which less \
     nano vim \
     python3 gawk wget curl \
-    screen tmux 
+    screen tmux man
 
 # # uncomment to enable emacs in the build
 # RUN apt install emacs-nox
