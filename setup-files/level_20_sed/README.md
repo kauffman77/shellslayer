@@ -6,11 +6,11 @@ the Daemon. He has laid out his account of heaven in the files
 scattered here. But... it is almost too much to bare... the loathsome
 Daemon has defaced the poem.  It has changed words throughout leaving
 the poet inconsolable (as poets often are) and speaks naught. Perhaps
-if you were to able to restore the files and the poem to their
-original state, the poet would cheer and reveal the Daemon name he
-knows.  
+if you were able to restore the files and the poem to their original
+state, the poet would cheer and reveal the Daemon name he
+knows.
 
-I have inspected the poem and recall from an early reading that the
+I have inspected the poem and recall from an earlier reading that the
 following words have been changed.
 - 'Him' has become 'ME'  (the Daemon fancies himself the almighty)
 - 'God' has become 'Doggy' (the impudence! the audacity)
@@ -25,7 +25,7 @@ defaced versions remained).
 
 Please repair the poem, paladin.  It may take aeons to do so with your
 text editor but I have heard that the power of Stream Editing, that of
-`sed`, may be of use in case such as this.
+`sed`, may be of use in cases such as this.
 
 # Objective
 Traditional Unix command line tools provide a wealth of programmatic
@@ -49,7 +49,7 @@ Xyz 123
 Xyz Baby
 you and me!
 
-# Do the same substitution but redict output into a file
+# Do the same substitution but redirect output into a file
 >> sed 's/Abc/Xyz/g' fileA.txt > fileX.txt
 
 # Show the contents of the results file
@@ -67,8 +67,8 @@ leave me be!
 
 The substitution facility of `sed` is similar to the find/replace
 functionality provided by most text editors. However, `sed` is more
-commonly used on to process streams of data or used to process many
-files needing the same substitutions in a shell loop.
+commonly used to process streams of data or used to process many files
+needing the same substitutions in a shell loop.
 
 The objective of this level is to use `sed` to perform text
 substitutions on a collection of text files to "fix" them. All text

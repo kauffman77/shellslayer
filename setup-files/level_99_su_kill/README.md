@@ -6,7 +6,7 @@ abomination!
 
 # Objective
 At this point you should have acquired all of the Daemon's names. They
-form the root password for the Unix system in which you are logged in.
+form the root password for the Unix system in which you are working.
 The root or administrator password allows a user to change into the
 administrator account and carry out certain operations that normal
 users are prevented from doing. In this case, one simply wishes to
@@ -16,9 +16,9 @@ Here are relevant commands.
 |-------------------|-----------------------------------------------------------------------|
 | Command           | Effect                                                                |
 |-------------------|-----------------------------------------------------------------------|
-| su username       | Switch the given user, prompts for that users password                |
-| su root           | Switch to the root user, prompts for the root password                |
-| su                | Same as above                                                         |
+| su username       | Switch to become the given user, prompts for that users password      |
+| su root           | Switch to become the root user, prompts for the root password         |
+| su                | Same as `su root`                                                     |
 | ps -A             | List all running processes on the system; shows IDs and command names |
 | kill -9 1234      | Kill process 1234 with the kill signal                                |
 | pkill -9 cmd_name | Kill all processes that match 'cmd_name' with the kill signal         |

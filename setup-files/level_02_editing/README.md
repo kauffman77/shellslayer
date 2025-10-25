@@ -2,9 +2,9 @@
 Hark, paladin, and observe: there is a Spirit nearby that loathes the
 Daemon and knows one of its names.  Know, though, that this spirit is
 conceited and will not reveal the demon's name without a proper
-supplication.  I have as seen below, but have failed to satisfy this
-flippant spirit. Those that commune well with it always seem to do the
-following:
+supplication.  I have tried mightily to win favor with this flippant
+spirit but have failed. Those that commune well with it always seem to
+do the following:
 
 - Use capitalization at the beginning of sentences
 - Never dawdle with ellipses (...) and rather use commas
@@ -117,7 +117,7 @@ familiarity with one of the two terminal editors that is almost always
 installed by default. This is unfortunately not the case with emacs.
 
 # Flavor
-Paladin: have you acquainted thyself with an EDITOR? They are all
+Paladin: have you equipped thyself with an EDITOR? They are all
 powerful allies though this land is bereft of the emperor of editors,
 Emacs. In case you have forgotten, others have told that a proper
 supplication to the spirit within will follow these tenets:

@@ -16,7 +16,7 @@ file extension: the files are listed as .dat but are actually text
 files which should likely have the .txt extension.  It is possible to
 move all these files "by hand" but this process can be accomplished
 far more quickly through the use of basic shell scripting
-facilities. Once all files are renamed form .dat to .txt, a monitoring
+facilities. Once all files are renamed from .dat to .txt, a monitoring
 process will reveal a name of the Daemon.
 
 A few relevant commands are described below:

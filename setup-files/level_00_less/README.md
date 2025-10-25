@@ -32,8 +32,8 @@ allow text to be displayed while in a terminal. The command
 ...
 ```
 
-will show the contents of `file.txt` in the terminal and is good have
-a look at small-ish files.
+will show the contents of `file.txt` in the terminal and is a quick
+ way to view small-ish files.
 
 When files are larger, the contents will likely scroll by too fast to
 be useful. In those cases, a **pager** like `less` is useful.  Pagers
@@ -51,10 +51,14 @@ useful keystrokes to know within `less` are:
 | Keystroke | Effect                                      |
 |-----------|---------------------------------------------|
 | q         | Quit the program and return to the terminal |
+| up/down   | Arrow keys scroll single lines up/down      |
+| j         | Scroll one line down a la vim               |
+| k         | Scroll one line up a la vim                 |
 | space     | Move one page down                          |
 | backspace | Move one page up                            |
 | u         | Move one page up                            |
 | /         | Start a regular expression search           |
+| n         | During a search, go to the next match
 | >         | Go to the end of the file                   |
 | <         | Go to the beginning of the file             |
 |-----------|---------------------------------------------|
