@@ -41,16 +41,16 @@ def scrolldown_topbanner(msg,delay_sec):
   show_cursor()
 
 
-passfile="/setup-files/passmsg.txt"  # for container
+winfile="/setup-files/winmsg.txt"  # for container
 daemon_prog="daemon"
 
 # passfile="../passmsg.txt"            # for testing
 # daemon_prog="testprog"
 
 def main():
-  passmsg=""                    # read in the 
-  with open(passfile,"r") as f:
-    passmsg=f.read()
+  winmsg=""
+  with open(winfile,"r") as f:
+    winmsg=f.read()
 
   time.sleep(3)                 # 3 second delay to let daemon to
   # start ideally sould start this monitor after the daemon starts to
@@ -65,6 +65,6 @@ def main():
     exit_code = os.waitstatus_to_exitcode(status)
     if exit_code!=0:
       break
-  scrolldown_topbanner(passmsg,0.1)
+  scrolldown_topbanner(winmsg,0.1)
 
 main()

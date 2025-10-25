@@ -34,7 +34,7 @@ su paladin                      # give user control
 # fail: https://www.asciiart.eu/mythology/devils
 
 if [[ -z $(pgrep daemon) ]]; then
-    cat /setup-files/passmsg.txt
+    cat /setup-files/winmsg.txt
 else
     cat /setup-files/failmsg.txt
 fi
