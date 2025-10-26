@@ -34,6 +34,8 @@ def main(cmd_args):
   res = setup_level_00_less(names)
   rootpass.append(res)
 
+  setup_level_01_touch(names)
+
   res = setup_level_02_editing(names)
   rootpass.append(res)
 
@@ -54,6 +56,10 @@ def main(cmd_args):
   with open("rootpass.txt","w") as fout:
     print(rootpass_str,file=fout)
   
+  with open("levelnames.txt","w") as fout:
+    for name in rootpass:
+      print(name,file=fout)
+  
   setup_level_99_su_kill(names)
   
   
@@ -63,6 +69,17 @@ def setup_level_00_less(names):
   name = names.pop()            # pick last name and remove it
   shell(f"sed 's/DEMONNAME/{name}/' {readmefile} > {USER_HOME}/README.md")
   return name
+
+
+def setup_level_01_touch(names):  # consumes no names, returns none
+  lvl="level_01_touch"          
+  level_dir = f"{USER_HOME}/{lvl}"
+  shell(f"mkdir -p {level_dir}")
+  readme=f"{lvl}/README.md"
+  shell(f"cp {readme} {level_dir}")
+  monitor=f"{lvl}/monitor_altar_of_names"
+  shell(f"chmod u+x {monitor}")
+  shell(f"{monitor} &")
 
 
 def setup_level_02_editing(names):

@@ -1,0 +1,105 @@
+#!/usr/bin/python3
+
+import random
+import time
+import os
+import os.path
+
+actualname_filename = "/home/paladin/ALTAR_OF_NAMES.txt"
+actualname_modtime = ""
+username = "paladin"
+group = "users"
+
+def put_cursor(row,col):
+  """Puts the cursor at the given row/col in the terminal"""
+  print(f"\033[{row};{col}H",end="")
+
+def hide_cursor():
+  """Hide the terminal cursor """
+  print(f"\033[?25l",end="")
+
+def show_cursor():
+  """Show the terminal cursor"""
+  print(f"\033[?25h",end="")
+
+def printstr_pos(string,startrow):
+  '''Uses terminal cursor positioning to print a message.
+
+  Without position, programs like vi / nano / less screw up the
+  printing of newline-based messages; this funciton prevents that
+
+  '''
+  lines = string.splitlines()
+  for (i,line) in enumerate(lines):
+    put_cursor(startrow+i,0)
+    print(line,end="",flush=True)
+  put_cursor(startrow+len(lines),0)
+
+def print_banner_top(msg):
+  """Print a banner message at the top"""
+  printstr_pos("="*60,1)
+  row = 2
+  for line in msg.splitlines():
+    msg=f"== {line:54} =="
+    printstr_pos(msg,row)
+    row += 1
+  msg=f"== {'Press Ctrl-l or type reset to restore the screen':54} =="
+  printstr_pos(msg,row)
+  row += 1
+  printstr_pos("="*60,row)
+  printstr_pos(" "*60,row+1)
+  printstr_pos(" ",row+1)
+
+
+def shell(cmd):
+  """Run a shell command"""
+  # subprocess.run(cmd,shell=True)
+  os.system(cmd)
+
+
+def check_levelnames(expectnames):
+  """Check names in ALTAR_OF_NAMES.txt for correctness"""
+
+
+  if not os.path.exists(actualname_filename):     # ignore missing altar
+    # print_banner_top("NO ALTAR")
+    return
+     
+  global actualname_modtime
+  modtime = os.path.getmtime(actualname_filename) # check for no changes
+  if modtime == actualname_modtime:               # return if no change to names
+    return
+
+  actualname_modtime = modtime                    # change to mod time so run name checks
+  actualnames = []
+  with open(actualname_filename,"r") as fin:
+    for line in fin:
+      actualnames.append(line)
+
+  correct_count = 0
+  for i in range(len(expectnames)):
+    if i >= len(actualnames) or expectnames[i] != actualnames[i]:
+      break
+    correct_count += 1
+  msg = f"""\
+    The first {correct_count} entries on the ALTAR_OF_NAMES.txt
+                  glow with power
+
+"""
+  print_banner_top(msg)
+  return
+
+
+def main():
+  time.sleep(3)     # 3 seconds to let levelnames.txt be created
+
+  levelnames = []
+  with open("/setup-files/levelnames.txt","r") as fin:
+    for line in fin:
+      levelnames.append(line)
+
+  while True:                   
+    check_levelnames(levelnames)
+    time.sleep(0.25)
+
+main()

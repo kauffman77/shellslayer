@@ -3,6 +3,7 @@
 import random
 import time
 import os
+import os.path
 
 def put_cursor(row,col):
   """Puts the cursor at the given row/col in the terminal"""
@@ -29,6 +30,22 @@ def printstr_pos(string,startrow):
     print(line,end="",flush=True)
   put_cursor(startrow+len(lines),0)
 
+def print_banner_top(msg):
+  """Print a banner message at the top"""
+  printstr_pos("="*60,1)
+  row = 2
+  for line in msg.splitlines():
+    msg=f"== {line:54} =="
+    printstr_pos(msg,row)
+    row += 1
+  msg=f"== {'Press Ctrl-l or type reset to restore the screen':54} =="
+  printstr_pos(msg,row)
+  row += 1
+  printstr_pos("="*60,row)
+  printstr_pos(" "*60,row+1)
+  printstr_pos(" ",row+1)
+
+
 def scrolldown_topbanner(msg,delay_sec):
   """Scroll down a multiline banner message from the top of the screen"""
   hide_cursor()
@@ -47,12 +64,20 @@ daemon_prog="daemon"
 # passfile="../passmsg.txt"            # for testing
 # daemon_prog="testprog"
 
+
+def shell(cmd):
+  """Run a shell command"""
+  # subprocess.run(cmd,shell=True)
+  os.system(cmd)
+
+
+
 def main():
   winmsg=""
   with open(winfile,"r") as f:
     winmsg=f.read()
-
-  time.sleep(3)                 # 3 second delay to let daemon to
+  
+  time.sleep(3)                 # 3 second delay to let daemon start
   # start ideally sould start this monitor after the daemon starts to
   # alleviate this concurrency danger but this would buck the current
   # setup wherein each level setup function starts any monitors
@@ -60,7 +85,9 @@ def main():
   # monitors that should be started after the daemon but this is
   # sufficient for now
 
-  while True:                   # wait until daemon has been killed
+  while True:                   
+
+    # check if daemon has been killed
     status = os.system(f"pgrep {daemon_prog} > /dev/null")
     exit_code = os.waitstatus_to_exitcode(status)
     if exit_code!=0:

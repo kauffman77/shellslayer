@@ -116,6 +116,12 @@ containers and the point of this exercise is to gain passing
 familiarity with one of the two terminal editors that is almost always
 installed by default. This is unfortunately not the case with emacs.
 
+## Editing the Altar of Names
+After determining the name of the daemon in this level, make sure to
+add it to the end of the `ALTAR_OF_NAMES.txt` to verify its
+correctness. Use your new editing skills to add it on and avoid
+overwriting preceding names.
+
 # Flavor
 Paladin: have you equipped thyself with an EDITOR? They are all
 powerful allies though this land is bereft of the emperor of editors,

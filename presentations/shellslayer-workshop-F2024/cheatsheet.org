@@ -1,6 +1,14 @@
 * Shellslayer Cheatsheet
 - seed: 1234
 - pass: MalebolgiaAzathothAbraxasArchonSamiginaAkoman
+- Names:
+Malebolgia
+Azathoth
+Abraxas
+Archon
+Samigina
+Akoman
+
 |---------------------+------------+-----------------------------------------------------------------------------------|
 | Level               | Name       | Solution                                                                          |
 |---------------------+------------+-----------------------------------------------------------------------------------|
