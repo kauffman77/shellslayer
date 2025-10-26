@@ -43,12 +43,13 @@ def print_banner_top(msg):
     msg=f"== {line:54} =="
     printstr_pos(msg,row)
     row += 1
+  printstr_pos("="*60,row)
+  row += 1
   msg=f"== {'Press Ctrl-l or type reset to restore the screen':54} =="
   printstr_pos(msg,row)
   row += 1
   printstr_pos("="*60,row)
   printstr_pos(" "*60,row+1)
-  printstr_pos(" ",row+1)
 
 
 def shell(cmd):
