@@ -96,6 +96,9 @@ def setup_level_02_editing(names):
   shell(f'''sed -i.bk "s/PHRASE/{end_phrase}/g; s/TIMES/{times}/g; s/DEMONNAME/{name}/g" {monitor}''')
   shell(f"chmod u+x {monitor}")
   shell(f"{monitor} {level_dir} &")
+  # # for debugging
+  # solution=f"{lvl}/SOLUTION.md"
+  # shell(f"cp {solution} {level_dir}")
   return name
 
 

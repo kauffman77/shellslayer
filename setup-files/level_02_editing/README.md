@@ -137,5 +137,6 @@ supplication to the spirit within will follow these tenets:
 
 Supplicate thyself below.
 
-# Supplication
+=====SUPPLICATION-START=====
 PHRASE
+=====SUPPLICATION-END=======

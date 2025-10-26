@@ -11,9 +11,10 @@ WORKDIR=$1
 cd $WORKDIR
 
 while true; do
-    actual1=$(tail -n TIMES README.md | sort | uniq -c| awk '{print $1}')
+    awkscript='/SUPPLICATION-END/{exit}p{print}/SUPPLICATION-START/{p=1}'
+    actual1=$(awk "$awkscript" README.md | sort | uniq -c| awk '{print $1}')
     expect1=TIMES
-    actual2=$(tail -1 README.md)
+    actual2=$(awk "$awkscript" README.md | tail -1)
     expect2="PHRASE"
     if [[ "$actual1" == "$expect1" && "$actual2" == "$expect2" ]]; then
         break
