@@ -1,6 +1,3 @@
-- Add a closing END SUPPLICATION in level_02_editing to allow easier
-  viewing of the end of the file / e.g. region where the text should
-  be edited
 - Update level_10_sh_loops so that only the files ending exactly in
   .txt are used, NOT .dat.txt
 - Add a mechanism to log ALL daemon names and verify them to ensure
@@ -12,4 +9,6 @@
 - Debugging facility needed so that quick checks can be done by
   enabling some debugging mode; check on Docker facilities for
   honoring environment variables or passing arguments
-
+- Merge some common python functions into a module that can be
+  imported; banner printing etc.
+- Port some bash monitors and possibly main.sh to python
