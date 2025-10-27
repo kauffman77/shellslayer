@@ -5,6 +5,8 @@
 
 import random
 import time
+import signal
+
 
 def put_cursor(row,col):
   print(f"\033[{row};{col}H",end="")
@@ -44,7 +46,39 @@ def freakout():
 '''
   printstr_pos(message,0)
 
+
+
+def sighandler(signum,stackframe):
+  for i in range(40):
+    row = random.randrange(40)
+    col = random.randrange(60)
+    put_cursor(row,col)
+    time.sleep(0.1 - i/40*0.09)
+    print("Ha ha ha!",end="",flush=True)
+
+  msg='''
+=====================================================================
+=           MWAH HA HA HA!      ,    ,    /\\   /\\                   =
+=           I laugh at your    /( /\\ )\\  _\\ \\_/ /_                  =
+=           pitiful signal,    |\\_||_/| < \\_   _/ >                 =
+=           puny paladin.      \\______/  \\|0   0|/                  =
+=                                _\\/_   _(_  ^  _)_                 =
+=           It will take more   ( () ) /`\\|V"""V|/`\\                =
+=           than that feeble      {}   \\  \\_____/  /                =
+=           attempt to -KILL me!  ()   /\\   )=(   /\\                =
+=           ---- DAEMON ----      {}  /  \\_/\\=/\\_/  \\               =
+=====================================================================
+= PRESS Ctl-L to refresh the screen and remove daemonic defacements =
+=====================================================================
+'''
+  printstr_pos(msg,1)
+
 def main():
+  for s in signal.Signals:
+    # if not s in {signal.SIGKILL, signal.SIGSTOP, signal.SIGSTP}:
+    if not s in {9, 19, 20}:    # KILL, STOP, STP
+      signal.signal(s, sighandler)
+
   time.sleep(15)
   freakout()
   while True:
