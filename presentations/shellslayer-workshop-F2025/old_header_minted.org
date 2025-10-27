@@ -1,0 +1,57 @@
+# Lecture slide header to set up style properly
+#+AUTHOR: Chris Kauffman
+#+DATE: \it Last Updated: \newline \input{|"/usr/bin/date"}
+#+OPTIONS: toc:nil H:1 ':t
+#+STARTUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [mathserif]
+#+LATEX_HEADER: \hypersetup{colorlinks=true,urlcolor=blue}
+#+LATEX_HEADER: \graphicspath{{./figs/}}  %% Where the figures live
+#+LATEX_HEADER: \usenavigationsymbolstemplate{}
+#+LATEX_HEADER: \usepackage{lmodern}
+#+LATEX_HEADER: \usepackage[useregional=numeric]{datetime2}
+
+# Slide numbers
+#+LATEX_HEADER: \setbeamertemplate{footline}{ \hfill \raisebox{5pt}{ \insertframenumber \hspace{2pt}} }
+ 
+# #######################################
+# Enable utf8 characters to display.  Certain characters like ± will
+# display normally while other require use of the now defined
+# \unicode{} command as in \unicode{😁} (toothy smile)
+# 
+# Thu Aug 24 05:06:01 PM EDT 2023 : found that this breaks double
+# quotes so leaving it off for now
+# #+LATEX_HEADER: \usepackage{fontspec}  
+# #+LATEX_HEADER: \usepackage[GeometricShapes,GeometricShapesExtended,
+# #+LATEX_HEADER:             MiscellaneousSymbols,MiscellaneousSymbolsAndPictographs,
+# #+LATEX_HEADER:             HalfwidthAndFullwidthForms,Dingbats,
+# #+LATEX_HEADER:             Arrows,SupplementalSymbolsAndPictographs,
+# #+LATEX_HEADER:             GreekAndCoptic,
+# #+LATEX_HEADER: ]{ucharclasses}
+# #+LATEX_HEADER: \newfontfamily{\shapefamily}{Symbola}
+# #+LATEX_HEADER: \setDefaultTransitions{\shapefamily}{\rmfamily}
+# #+LATEX_HEADER: \newfontfamily{\unicode}{Symbola} 
+
+#+LATEX_HEADER: \usepackage{xcolor}
+
+# #######################################
+# MINTED for syntax highlighting
+# Use syntax highlighiting when exporting beamer/latex examples
+#+BIND: org-latex-minted-options (("numbersep" "0.5em"))
+#+BIND: org-latex-listings minted
+# alternative: run (set-variable 'org-latex-listings 'minted nil)
+# 
+# Include minted package, set cache directory
+#+LATEX_HEADER: \usepackage[cachedir=/home/kauffman/tmp/minted-cache]{minted}
+#+LATEX_HEADER: \usemintedstyle{kauffman}
+# 
+# In Minted, don't use italic text
+#+LATEX_HEADER: \usepackage{xpatch}
+#+LATEX_HEADER: \xpatchcmd{\mintinline}{\begingroup}{\begingroup\let\itshape\relax}{}{}
+#+LATEX_HEADER: \xpatchcmd{\minted}{\VerbatimEnvironment}{\VerbatimEnvironment\let\itshape\relax}{}{}
+#+LATEX_HEADER: \usepackage{relsize} %% used to decrease existing font size
+#+LATEX_HEADER: %% type writer font for line numbers
+#+LATEX_HEADER: \renewcommand{\theFancyVerbLine}{\ttfamily \textsmaller[1]{\arabic{FancyVerbLine}}}
+
+# Don't center images by default
+#+BIND: org-latex-images-centered nil

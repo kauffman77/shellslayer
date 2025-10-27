@@ -1,0 +1,23 @@
+#+options: toc:nil num:nil
+
+* Shellslayer Cheatsheet
+- seed: 12345
+- pass: LeyakAchlysGakiKabandhaCaymErrtu
+
+|---------------------+----------+-----------------------------------------------------------------------------------|
+| Level               | Name     | Solution                                                                          |
+|---------------------+----------+-----------------------------------------------------------------------------------|
+| ~level_00_less~     | Levak    | Search ~README.md~ for 'Daemon'                                                   |
+| ~level_01_touch~    | -        | ~echo Levak >> ~/ALTAR_OF_NAMES.txt~                                              |
+| ~level_02_editing~  | Achlys   | Copy phrase ~Oh benevolent spirit, PLEASE aid my quest and reveal demon's name!!~ |
+|                     |          | 5 times in Supplication section of ~README.md~ and save                           |
+| ~level_05_grep~     | Gaki     | ~grep -r -i Azathoth level_02_grep~; must sort output by canto #                  |
+|                     |          | ~grep -i Azathoth 0_inferno.txt cantos/*.txt;~; will show in sorted order         |
+| ~level_10_sh_loops~ | Kabandha | ~for f in *.dat; do mv $f ${f/.dat/.txt}; done~                                   |
+| ~level_15_find~     | Caym     | ~find . -name 'altar.txt'~                                                        |
+| ~level_20_sed~      | Errtu    | ~subs='s/ME/Him/g; s/Doggy/God/g; s/Beetlejuice/Beatrice/g; s/Pippin/Mary/g;'~    |
+|                     |          | ~for f in defaced*; do sed "$subs" $f > ${f/defaced-/}; done~                     |
+| ~level_99_su_kill~  | -        | ~su~  (enter pass)                                                                |
+|                     |          | ~pkill daemon~                                                                    |
+|---------------------+----------+-----------------------------------------------------------------------------------|
+
