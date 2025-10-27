@@ -7,6 +7,7 @@
 
 Visit: https://go.umd.edu/shellslayer
 - Includes link to github page for ShellSlayer
+- Includes a link to the *Cheat Sheet* in case you are stuck
 - Has a Feedback Form to fill in at the end of this session
 
 If you wore a costume *come get some candy.*  If there is any left,
