@@ -1,3 +1,6 @@
+- Modify level_20_sed to fix the "broken pipes" problem: this seems to
+  occur when files get either messed up or removed and is likely just
+  a fragile monitor program; happened during the Fall 2025 demo
 - Update level_10_sh_loops so that only the files ending exactly in
   .txt are used, NOT .dat.txt
 - Add a mechanism to log ALL daemon names and verify them to ensure
@@ -6,6 +9,9 @@
   the LOG.txt indicating correct names; when all correct names are on
   the altar, level_99 is opened, perhaps via permission change by the
   same monitor that checks names
+  - Have done this to some extent via the ALTAR_OF_NAMES which allows
+    tracking progress; for ease of restart, it makes sense NOT to do
+    permissions restrictions on the su/kill functionality
 - Debugging facility needed so that quick checks can be done by
   enabling some debugging mode; check on Docker facilities for
   honoring environment variables or passing arguments
