@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DEBUG=0
-SEED=12345
+SEED=34567
 # perform basic setup in the setup-files directory
 cd setup-files
 

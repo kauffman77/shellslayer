@@ -28,10 +28,11 @@ RUN apt-get install -y \
 # RUN apt install emacs-nox
 
 # copy files over
-COPY main.sh /main.sh
 COPY daemon /daemon
-RUN chmod u+x main.sh daemon
+RUN chmod u+x daemon
 COPY setup-files /setup-files
+COPY main.sh /main.sh
+RUN chmod u+x main.sh
 
 CMD ./main.sh
 

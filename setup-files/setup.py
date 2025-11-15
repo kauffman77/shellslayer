@@ -48,8 +48,8 @@ def main(cmd_args):
   res = setup_level_15_find(names)
   rootpass.append(res)
 
-  res = setup_level_20_sed(names)
-  rootpass.append(res)
+  # res = setup_level_20_sed(names)
+  # rootpass.append(res)
 
   rootpass_str = ''.join(rootpass)
 
