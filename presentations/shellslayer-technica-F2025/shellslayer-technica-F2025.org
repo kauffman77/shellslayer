@@ -3,12 +3,18 @@
 #+STARTUP: beamer
 #+INCLUDE: ~/Dropbox/misc/header_minted.org
 
-* Preamble
+* Technica ShellSlayer Fall 2025 Workshop
+** Preamble
 
 Visit: https://go.umd.edu/shellslayer
 - Includes link to github page for ShellSlayer
 - Includes a link to the *Cheat Sheet* in case you are stuck
 - Has a Feedback Form to fill in at the end of this session
+
+#+LATEX:\vspace{.2in}
+
+*If you don't have Docker installed, punch "Install Docker" into a
+browser and install it!*
 
 # If you wore a costume *come get some candy.*  If there is any left,
 # others can partake
