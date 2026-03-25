@@ -79,3 +79,10 @@ sed
 
 
 ** Misc Ideas
+* Advertising Blurbs
+
+** Medium
+This workshop gives a crash course on UNIX command line tools and the shell. Session participants will log into a Docker image that contains tutorial 'levels' that illustrate tools like grep, sed, shell loops, and various other classic shell conveniences for processing files and text.  The activities culminate in slaying an errant 'daemon' that haunts the container by obtaining the power of 'root'.
+
+** Short and Colorful
+Learn command line skills and master classic tools like grep and sed in a series of stages. Wield the power of root to kill -9 a daemonic process haunting a docker container. Become the Shell Slayer.

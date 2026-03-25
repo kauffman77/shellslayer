@@ -1,6 +1,8 @@
 * Shell Slayer
-A shell tutorial with a daemonic twist that uses Docker containers for
-a stable environment.
+A shell tutorial with a daemonic twist. Instructs on how to use some
+classic UNIX shell tools (~grep, find, sed~, shell loops) to
+manipulate data in a terminal, uses Linux Docker containers for a
+stable environment.
 
 * Running the Exercise
 To simply run the tutorial you'll need to
