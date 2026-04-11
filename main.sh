@@ -2,6 +2,7 @@
 
 DEBUG=0
 SEED=34567
+ARGS=$1
 # perform basic setup in the setup-files directory
 cd setup-files
 
@@ -11,7 +12,7 @@ useradd -s /usr/bin/bash -m -g users paladin
 # -m : create a home directory for user
 # -g users : add to group "users"
 mv bashrc.user.sh /home/paladin/.bashrc
-python3 setup.py $SEED
+python3 setup.py $SEED $1
 chmod -R og-rwX .               # remove permissions on setup files
 
 rootpass=$(cat rootpass.txt)    # grab root password from the file created during setup

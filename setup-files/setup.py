@@ -22,6 +22,10 @@ def shell(cmd):
 
 def main(cmd_args):
   seed = int(cmd_args[0])
+  extended = False
+  if(len(cmd_args) > 1):
+    extended = True
+
   random.seed(seed)
   print(f"Seed is {seed}",flush=True)
 
@@ -42,14 +46,15 @@ def main(cmd_args):
   res = setup_level_05_grep(names)
   rootpass.append(res)
 
-  res = setup_level_10_sh_loops(names)
-  rootpass.append(res)
+  if extended:
+    res = setup_level_10_sh_loops(names)
+    rootpass.append(res)
 
-  res = setup_level_15_find(names)
-  rootpass.append(res)
+    res = setup_level_15_find(names)
+    rootpass.append(res)
 
-  # res = setup_level_20_sed(names)
-  # rootpass.append(res)
+    res = setup_level_20_sed(names)
+    rootpass.append(res)
 
   rootpass_str = ''.join(rootpass)
 
