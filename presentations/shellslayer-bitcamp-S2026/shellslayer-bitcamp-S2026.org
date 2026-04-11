@@ -110,7 +110,7 @@ If you've previously done Shell Slayer, update your Docker image via
 
 #+LATEX:\normalsize
 /You sense a foul presence in the process tree.../
-- A "Daemon" process is present in the system and must be killed.
+- A "Daemon" process is present and must be killed.
 - To do so, you must switch to be the Root user (administrator)
 - Becoming root requires a password
 - Each level (~level_00_less~, ~level_02_editing~, ...) teaches about
@@ -143,7 +143,6 @@ If you've previously done Shell Slayer, update your Docker image via
 | ~level_05_grep~     |    3 | Searching for text with ~grep~           |
 | ~level_99_su_kill~  |    - | Changing to "root" and killing processes |
 |---------------------+------+------------------------------------------|
-|---------------------+------+------------------------------------------|
 | UNUSED              |      | Omitted for time                         |
 | ~level_10_sh_loops~ |    4 | Looping over files in the shell          |
 | ~level_15_find~     |    5 | Locating files with ~find~               |
@@ -159,9 +158,11 @@ For each level...
 
 * Extended Version
 The UNUSED levels can be run using
+#+LATEX:\fontsize{8}{9}
 #+BEGIN_SRC sh
 >> docker run -it --rm kauffman77/shellslayer /main.sh extend
 #+END_SRC
+#+LATEX:\normalsize
 for those that want to study the topics in them
 
 

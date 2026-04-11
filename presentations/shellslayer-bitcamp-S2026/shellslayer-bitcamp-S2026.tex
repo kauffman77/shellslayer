@@ -1,4 +1,4 @@
-% Created 2026-04-11 Sat 13:40
+% Created 2026-04-11 Sat 17:51
 % Intended LaTeX compiler: pdflatex
 \documentclass[mathserif]{beamer}
 \usepackage[utf8]{inputenc}
@@ -41,7 +41,7 @@
 \begin{document}
 
 \maketitle
-\begin{frame}[label={sec:org1ab6be7}]{Bitcamp ShellSlayer Spring 2026 Workshop}
+\begin{frame}[label={sec:orgb56e320}]{Bitcamp ShellSlayer Spring 2026 Workshop}
 \begin{block}{Preamble}
 Visit: \url{https://go.umd.edu/shellslayer}
 \begin{itemize}
@@ -56,7 +56,7 @@ Visit: \url{https://go.umd.edu/shellslayer}
 browser and install it!}
 \end{block}
 \end{frame}
-\begin{frame}[label={sec:orgdcb886d}]{Welcome Slayers}
+\begin{frame}[label={sec:orgf81be3d}]{Welcome Slayers}
 \begin{block}{Immediate Goals}
 \begin{itemize}
 \item Illustrate Docker as a way to get a shell environment / run programs
@@ -80,7 +80,7 @@ levels, etc.
 \end{itemize}
 \end{block}
 \end{frame}
-\begin{frame}[label={sec:orgb4a33e6}]{Docker Setup}
+\begin{frame}[label={sec:orga160972}]{Docker Setup}
 \vspace{-.4in}
 \begin{columns}
 \begin{column}{.75\columnwidth}
@@ -111,7 +111,7 @@ via a GUI (blegh) or command line (yay!)
 \end{itemize}
 \end{block}
 \end{frame}
-\begin{frame}[label={sec:org00d86c7},fragile]{Running Shell Slayer}
+\begin{frame}[label={sec:org77e6de9},fragile]{Running Shell Slayer}
  Start the ``Docker Desktop'' application (via clicking things) then use
 a command shell to download / run the shellslayer image via:
 
@@ -139,7 +139,7 @@ If you've previously done Shell Slayer, update your Docker image via
 \end{minted}
 \end{block}
 \end{frame}
-\begin{frame}[label={sec:org9276c29},fragile]{Structure of the Exercise}
+\begin{frame}[label={sec:org80956c0},fragile]{Structure of the Exercise}
  \begin{description}
 \item[{daemon (noun)}] \begin{enumerate}
 \item Archaic spelling of demon
@@ -152,7 +152,7 @@ control of an interactive user.
 \normalsize
 \emph{You sense a foul presence in the process tree...}
 \begin{itemize}
-\item A ``Daemon'' process is present in the system and must be killed.
+\item A ``Daemon'' process is present and must be killed.
 \item To do so, you must switch to be the Root user (administrator)
 \item Becoming root requires a password
 \item Each level (\texttt{level\_00\_less}, \texttt{level\_02\_editing}, ...) teaches about
@@ -162,7 +162,7 @@ of the root password (one of the Daemon's names)
 Daemon
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orgf744704},fragile]{Workshop Plan}
+\begin{frame}[label={sec:org94daccc},fragile]{Workshop Plan}
  \vspace{-.4in}
 \begin{columns}
 \begin{column}{1.1\columnwidth}
@@ -178,7 +178,6 @@ Level & Name & Overview\\
 \texttt{level\_02\_editing} & 2 & Editing text files with \texttt{vi / nano}\\
 \texttt{level\_05\_grep} & 3 & Searching for text with \texttt{grep}\\
 \texttt{level\_99\_su\_kill} & - & Changing to ``root'' and killing processes\\
-\hline
 \hline
 UNUSED &  & Omitted for time\\
 \texttt{level\_10\_sh\_loops} & 4 & Looping over files in the shell\\
@@ -200,14 +199,16 @@ For each level...
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org5ded899},fragile]{Extended Version}
+\begin{frame}[label={sec:orga642304},fragile]{Extended Version}
  The UNUSED levels can be run using
+\fontsize{8}{9}
 \begin{minted}[numbersep=0.5em]{sh}
 >> docker run -it --rm kauffman77/shellslayer /main.sh extend
 \end{minted}
+\normalsize
 for those that want to study the topics in them
 \end{frame}
-\begin{frame}[label={sec:orgd7ac05d},fragile]{Thank You for Your Participation}
+\begin{frame}[label={sec:orgbbb369f},fragile]{Thank You for Your Participation}
  \textbf{Participant Feedback at \url{https://go.umd.edu/shellslayer}}
 
 
