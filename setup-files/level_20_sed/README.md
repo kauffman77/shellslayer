@@ -1,14 +1,14 @@
 # Flavor
 Oh paladin, thank goodness you have arrived. Within this directory
 resides a great poet. He traversed the heights of heavens, the perils
-of purgatory, and the depths of hell itself where he learned a name of
+of purgatory, and the hall of hell itself where he learned a name of
 the Daemon. He has laid out his account of heaven in the files
 scattered here. But... it is almost too much to bare... the loathsome
 Daemon has defaced the poem.  It has changed words throughout leaving
-the poet inconsolable (as poets often are) and speaks naught. Perhaps
-if you were able to restore the files and the poem to their original
-state, the poet would cheer and reveal the Daemon name he
-knows.
+the poet inconsolable (as poets often are) and he speaks
+naught. Perhaps if you were able to restore the files and the poem to
+their original state, the poet would cheer and reveal the Daemon name
+he knows.
 
 I have inspected the poem and recall from an earlier reading that the
 following words have been changed.

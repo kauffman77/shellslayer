@@ -1,7 +1,7 @@
 # Flavor
 Noble paladin: in this directory there is a task even patient Sisyphus
 would despair of. Hundreds of formerly fine text files have been
-perniciously renamed by the Daemon to dat files. The has befuddled the
+perniciously renamed by the Daemon to dat files. This befuddled the
 monitor process that dwells here. It reveled in counting the contents
 of the text files but is confused by this sudden alteration.  It is
 said the monitor knows a name of the Daemon. Perhaps if you were to
