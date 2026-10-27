@@ -3,7 +3,7 @@
 #+STARTUP: beamer
 #+INCLUDE: ~/Dropbox/misc/header_minted.org
 
-* Bitcamp ShellSlayer Fall 2026 Workshop
+* ACM ShellSlayer Fall 2026 Workshop
 ** Preamble
 
 Visit: https://go.umd.edu/shellslayer
